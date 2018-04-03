@@ -6,9 +6,10 @@ var $button = $('#get-joke').click(function() {
 });
 var $paragraph = $('#joke');
 
+$.ajaxSetup({ cache: false });
+
 function getQuote() {
     $.getJSON(prefix + quoteUrl, createTweet);
-    $.ajaxSetup({ cache: false });
 }
 
 function createTweet(input) {
